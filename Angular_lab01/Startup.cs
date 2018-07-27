@@ -29,7 +29,7 @@ namespace Angular_lab01
         {
             services.AddMvc();
 
-            services.AddDbContext<LabContext>(Options => Options.UseSqlServer("DefaultConnection"));
+         //   services.AddDbContext<LabContext>(Options => Options.UseSqlServer("DefaultConnection"));
 
             services.AddTransient<HeroesService,HeroesService>();
         }

@@ -8,7 +8,6 @@ namespace Angular_lab01.Models
     public class HeroesService
     {
 
-
        public IEnumerable<Heroe> GetHeroes()
         {
             return new List<Heroe>() {
