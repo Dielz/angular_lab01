@@ -15,6 +15,8 @@ namespace Angular_lab01
 {
     public class Startup
     {
+        private const string _corsPolicyName = "DefaultCorsPolicy";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,6 +31,16 @@ namespace Angular_lab01
         {
             services.AddMvc();
 
+            services.AddCors(cors =>
+            {
+            cors.AddPolicy(_corsPolicyName, builder =>
+                builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin()
+                );
+
+            });
+
          //   services.AddDbContext<LabContext>(Options => Options.UseSqlServer("DefaultConnection"));
 
             services.AddTransient<HeroesService,HeroesService>();
@@ -41,7 +53,9 @@ namespace Angular_lab01
             {
                 app.UseDeveloperExceptionPage();
             }
-           
+
+            app.UseCors(_corsPolicyName);
+
             app.UseMvc();
         }
     }

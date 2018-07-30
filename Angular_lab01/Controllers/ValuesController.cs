@@ -26,9 +26,9 @@ namespace Angular_lab01.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Heroe Get(int id)
         {
-            return "value";
+            return hs.GetHeroes().FirstOrDefault(p => p.id == id);
         }
 
         // POST api/values
