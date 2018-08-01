@@ -43,7 +43,7 @@ namespace Angular_lab01
 
          //   services.AddDbContext<LabContext>(Options => Options.UseSqlServer("DefaultConnection"));
 
-            services.AddTransient<HeroesService,HeroesService>();
+            services.AddSingleton<HeroesService,HeroesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

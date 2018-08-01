@@ -8,9 +8,7 @@ namespace Angular_lab01.Models
     public class HeroesService
     {
 
-       public IEnumerable<Heroe> GetHeroes()
-        {
-            return new List<Heroe>() {
+        public List<Heroe> heroes = new List<Heroe>() {
               new Heroe { id= 11, name= "Mr. Nice" },
               new Heroe { id= 12, name= "Narco" },
               new Heroe { id= 13, name= "Bombasto" },
@@ -23,7 +21,14 @@ namespace Angular_lab01.Models
               new Heroe { id= 20, name= "Tornado" }
 
             };
+
+
+       public IEnumerable<Heroe> GetHeroes()
+        {
+            return heroes;
         }
+
+
 
     }
 }
